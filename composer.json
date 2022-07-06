@@ -1,0 +1,27 @@
+{
+  "name": "techlabs/whm-api",
+  "description": "Acesso API WHM",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Nilson Pessim",
+      "email": "nilson@techlabs.net.br",
+      "homepage": "https://www.techlabs.net.br",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config/Config.php"
+    ]
+  },
+  "require": {
+    "previewtechs/cpanel-whm-api": "dev-master"
+  }
+}
