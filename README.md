@@ -5,40 +5,35 @@
 Components needed to install dependencies.
 
 * :heavy_check_mark: composer
-* :heavy_check_mark: PHP 7.4
+* :heavy_check_mark: PHP 7.4+
 
-## :package: Dependencies
-Required packages.
+## :atom: Installation
 
+* In the Config folder, rename the *Config-Example.php* file to *Config.php*, open the file and enter your credentials:
 ``` 
-previewtechs/cpanel-whm-api
+define("CONF_WHM_URL", "your-domain-com.br");
+define("CONF_WHM_USER", "username-whm");
+define("CONF_WHM_TOKEN", "token-whm");
 ```
 
-## :package: Installation
-
-* In the Config folder, rename the Config-Example.php file to Config.php. Open the file and enter your credentials
-``` 
-define("CONF_WHM_URL", "example.com.br");
-define("CONF_WHM_USER", "username");
-define("CONF_WHM_TOKEN", "ACDEFGHIJKLMNOPQRSTUVWXYZ1234567");
-define("CONF_WHM_PORT", 2087);
-```
-
-* In the main directory, the composer.json file, all the project settings, just run composer install.
+* In the main directory, the composer.json file has all the project settings, just run it with composer.
 ``` 
 composer install
 ```
 
-* Usage:
+* Basic use:
 ``` 
-$newClient = (new WHM())->client(
-    CONF_WHM_USER, CONF_WHM_TOKEN, CONF_WHM_URL, CONF_WHM_PORT
-);
-$account = (new WHM())->account($newClient);
+require "vendor/autoload.php";
+use Source\App\WHM;
+
+$newClient = (new WHM())->client();
+$account   = (new WHM())->account($newClient)->searchAccounts();
+
+echo json_encode($account);
 ``` 
 
 * Available Functionality: WHM - Accounts
-``` 
+```
 * searchAccounts (List of all accounts)
 * getDetails (Details of a specific account)
 * create (Create a new account)
