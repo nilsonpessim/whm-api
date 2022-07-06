@@ -1,10 +1,12 @@
-## :rocket: API de Conexão WHM/cPanel
+## :rocket: API de Conexão WHM/cPanel [WHM/cPanel Connection API]
 :star_struck: Repositório de Instalação e Configuração.
+:star_struck: Installation and Configuration Repository.
 
-## :computer: Requisitos
+## :computer: Requisitos [Requirements]
 Composer é necessário para instalação das dependências
 
-* :cd: Composer
+* :heavy_check_mark: composer
+* :heavy_check_mark: PHP 7.4
 
 ## :package: Dependencias
 Pacotes necessários.
