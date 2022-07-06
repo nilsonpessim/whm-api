@@ -10,7 +10,7 @@ class WHM
     private $client;
     private $account;
 
-    public function client($username, $token, $url, $port = 2087): WHMClient
+    public function client($username = CONF_WHM_USER, $token = CONF_WHM_TOKEN, $url = CONF_WHM_URL, $port = CONF_WHM_PORT): WHMClient
     {
         $this->client = new WHMClient($username, $token, $url, $port);
         return $this->client;

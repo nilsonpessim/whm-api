@@ -3,11 +3,8 @@
 require "vendor/autoload.php";
 use Source\App\WHM;
 
-$client = (new WHM())->client(
-    CONF_WHM_USER, CONF_WHM_TOKEN, CONF_WHM_URL, CONF_WHM_PORT
-);
-
-$account = (new WHM())->account($client);
+$newClient = (new WHM())->client();
+$account = (new WHM())->account($newClient);
 
 var_dump(
     $account->getUsers()
